@@ -16,6 +16,7 @@ Uses Maven
  * mvn clean compile package
 
 ## Project structure
+```
 .
 |-- README.md
 |-- pom.xml
@@ -32,3 +33,6 @@ Uses Maven
 |           `-- WEB-INF
 |               |-- applicationContext.xml
 |               |-- web.xml
+```
+
+
