@@ -1,5 +1,6 @@
 # cxf-test
 Sample web app built with Apache CXF with SOAP and REST.
+
 Uses Maven
 
 ## Git steps 
