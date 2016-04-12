@@ -9,10 +9,29 @@ http://cxf.apache.org/jaxrs
 http://cxf.apache.org/schemas/jaxrs.xsd
 ">
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath*:META-INF/cxf/cxf-extension-*.xml" />
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
 
     <bean id="calculatorService" class="org.allowed.bitarus.Calculator" scope="singleton" />
-    <jaxws:endpoint implementor="#calculatorService" address="/calculator"  />
+    <bean id="passwordCallback" class="org.allowed.bitarus.PasswordCallback"/>
+    
+    <jaxws:endpoint implementor="#calculatorService" address="/calculator">
+ 
+   <jaxws:inInterceptors>
+      <bean class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">
+         <constructor-arg>
+            <map>
+               <entry key="action" value="UsernameToken"/>
+               <entry key="passwordType" value="PasswordText"/>
+               <entry key="passwordCallbackRef">   
+                   <ref bean="passwordCallback"/>                
+               </entry>
+            </map>
+         </constructor-arg>
+      </bean>
+   </jaxws:inInterceptors>
+ 
+    </jaxws:endpoint>
 
     <jaxrs:server id="connectionService" address="/">
         <jaxrs:serviceBeans>
