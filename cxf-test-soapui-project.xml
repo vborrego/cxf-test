@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7bba344a-7f54-4bb3-a6fe-51bf217b5af7" activeEnvironment="Default" 
+name="cxf-test" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config">
+<con:settings/>
+<con:interface xsi:type="con:WsdlInterface" id="3050b139-0817-4d0d-9779-be31421eebcc" 
+wsaVersion="NONE" name="CalculatorServiceSoapBinding" type="wsdl" 
+bindingName="{http://bitarus.allowed.org/}CalculatorServiceSoapBinding" soapVersion="1_1" 
+anonymous="optional" definition="http://localhost:8081/cxf-test-0.1/calculator?wsdl" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/>
+<con:definitionCache type="TEXT" rootPart="http://localhost:8081/cxf-test-0.1/calculator?wsdl"><con:part>
+<con:url>http://localhost:8081/cxf-test-0.1/calculator?wsdl</con:url>
+<con:content><![CDATA[<wsdl:definitions name="CalculatorService" targetNamespace="http://bitarus.allowed.org/" 
+xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:tns="http://bitarus.allowed.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://bitarus.allowed.org/" version="1.0" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="add" type="tns:add"/>
+      <xs:element name="addResponse" type="tns:addResponse"/>
+      <xs:element name="subtract" type="tns:subtract"/>
+      <xs:element name="subtractResponse" type="tns:subtractResponse"/>
+      <xs:complexType name="add">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+          <xs:element name="arg1" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="subtract">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+          <xs:element name="arg1" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="subtractResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="tns:addResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtract">
+    <wsdl:part element="tns:subtract" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtractResponse">
+    <wsdl:part element="tns:subtractResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part element="tns:add" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ICalculator">
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:add" name="add"></wsdl:input>
+      <wsdl:output message="tns:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtract">
+      <wsdl:input message="tns:subtract" name="subtract"></wsdl:input>
+      <wsdl:output message="tns:subtractResponse" name="subtractResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorServiceSoapBinding" type="tns:ICalculator">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtract">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="subtract">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subtractResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorService">
+    <wsdl:port binding="tns:CalculatorServiceSoapBinding" name="CalculatorPort">
+      <soap:address location="http://localhost:8081/cxf-test-0.1/calculator"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache>
+<con:endpoints><con:endpoint>http://localhost:8081/cxf-test-0.1/calculator</con:endpoint></con:endpoints>
+<con:operation id="79302c17-971e-4b0c-a80d-886e891e6c74" isOneWay="false" action="" name="add" bindingOperationName="add" 
+type="Request-Response" outputName="addResponse" inputName="add" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+<con:settings/><con:call id="d7eba572-b5de-444b-8314-c90478ebd092" name="Request 1" wssPasswordType="PasswordText"><con:settings>
+<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@wss-time-to-live"/></con:settings>
+<con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/cxf-test-0.1/calculator</con:endpoint>
+<con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bit="http://bitarus.allowed.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bit:add>
+         <arg0>1</arg0>
+         <arg1>7</arg1>
+      </bit:add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>alice</con:username><con:password>alice</con:password>
+<con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials>
+<con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/>
+<con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bitarus.allowed.org/ICalculator/add"/>
+<con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f8308b1a-b0c4-42a1-b73b-3595299a4c6a" isOneWay="false" 
+action="" name="subtract" bindingOperationName="subtract" type="Request-Response" outputName="subtractResponse" inputName="subtract" 
+receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/>
+<con:call id="b8842dbc-d5d8-4754-a657-6b3f5086ce1c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding>
+<con:endpoint>http://localhost:8081/cxf-test-0.1/calculator</con:endpoint>
+<con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bit="http://bitarus.allowed.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bit:subtract>
+         <arg0>?</arg0>
+         <arg1>?</arg1>
+      </bit:subtract>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" 
+action="http://bitarus.allowed.org/ICalculator/subtract"/></con:call></con:operation></con:interface>
+<con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
