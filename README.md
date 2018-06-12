@@ -22,6 +22,8 @@ Uses Maven
  * http://localhost:8081/cxf-test-0.1/services
  * http://localhost:8081/cxf-test-0.1/testSvc/1001
  * http://localhost:8081/cxf-test-0.1/?_wadl&_type=xml # save as app.wadl 
+
+There is a SOAPUI project to test the deployed WAR file. 
  
 ## Project structure
 ```
