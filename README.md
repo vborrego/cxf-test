@@ -1,5 +1,5 @@
 # cxf-test
-Sample web app built with Apache CXF with SOAP and REST.
+Sample web app built with Apache CXF with SOAP and REST (JAX-WS and JAX-RS).
 
 Uses Maven
 
@@ -15,7 +15,14 @@ Uses Maven
 
 ## Build 
  * mvn clean compile package
-
+ * cp target/cxf-test-0.1.war /opt/apache-tomcat-7.0.53/webapps/
+ 
+## Test
+ * http://localhost:8081/cxf-test-0.1/calculator?wsdl
+ * http://localhost:8081/cxf-test-0.1/services
+ * http://localhost:8081/cxf-test-0.1/testSvc/1001
+ * http://localhost:8081/cxf-test-0.1/?_wadl&_type=xml # save as app.wadl 
+ 
 ## Project structure
 ```
 .

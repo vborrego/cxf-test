@@ -5,6 +5,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 
+// http://localhost:8081/cxf-test-0.1/testSvc/aaaa
+// JAX-RS service 
 @Path("/testSvc")
 public class TestService {
 

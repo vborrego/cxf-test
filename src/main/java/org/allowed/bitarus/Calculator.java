@@ -3,7 +3,7 @@ package org.allowed.bitarus;
 public class Calculator implements ICalculator
 {
     public Calculator() {
-        // shows in catalina.out 
+        // shows in Tomcat catalina.out 
         System.out.println("Calculator created ");
     }
 
